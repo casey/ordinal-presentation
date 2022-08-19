@@ -124,7 +124,7 @@ def assign_ordinals(block):
 
 ---
 
-# Tokens
+# Tokens and NFTs
 
 If you want a token, you can just pick an ordinal to represent your token, and
 use the location of the ordinal to represent ownership.
@@ -138,7 +138,7 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 - Aesthetics!
 - Supporting the fee market!
-- Bitcoin-native digital art, maybe!
+- Simplicity!
 
 ---
 
