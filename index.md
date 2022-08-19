@@ -138,6 +138,7 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 - Aesthetics!
 - Supporting the fee market!
+- Bitcoin-native digital art, maybe!
 
 ---
 
