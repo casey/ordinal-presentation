@@ -143,8 +143,9 @@ the UTXO that contains the ordinal is the current owner of the token.
 ---
 
 # The Index
-- [faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:0](https://ordinals.com/output/faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:0)
-- [faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:1](https://ordinals.com/output/faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:1)
+
+- [mainnet](https://ordinals.com/)
+- [signet](https://signet.ordinals.com/)
 
 ---
 
