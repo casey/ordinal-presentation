@@ -7,7 +7,7 @@
         <title>Ordinals</title>
         <link rel=icon href=favicon.ico>
     <script>
-      const SLIDES = 20;
+      const SLIDES = 21;
       let current = parseInt(window.location.hash.substring(1)) || 0;
       window.location.hash = current;
       document.addEventListener("keydown", function(event) {
@@ -120,7 +120,6 @@
 <ul>
 <li>Who am I?</li>
 <li>What are ordinals?</li>
-<li>What does that have to do with NFTs?</li>
 </ul></section>
         <section id=1><h1>Feel free to interrupt and ask questions!</h1></section>
         <section id=2><h1>Who am I?</h1>
@@ -186,17 +185,8 @@ def assign_ordinals(block):
     output.ordinals = coinbase_ordinals[:output.value]
     del coinbase_ordinals[:output.value]
 </code></pre></section>
-        <section id=10><h1>What are ordinals good for?</h1>
-<p>If you want a token, you can just pick an ordinal to represent your token, and
-use the location of the ordinal to represent ownership.</p>
-<p>The person who controls the private key that corresponds to the public key of
-the UTXO that contains the ordinal is the current owner of the token.</p></section>
-        <section id=11><h1>What else are ordinals good for?</h1>
-<ul>
-<li>Aesthetics!</li>
-<li>Supporting the fee market!</li>
-</ul></section>
-        <section id=12><h1>Rare and exotic sats</h1>
+        <section id=10><h1>What are ordinals good for?</h1></section>
+        <section id=11><h1>Rare and exotic sats</h1>
 <ul>
 <li><a href="https://ordinals.com/ordinal/0%C2%B00%E2%80%B20%E2%80%B31%E2%80%B4">😐 Common</a></li>
 <li><a href="https://ordinals.com/ordinal/0%C2%B01%E2%80%B21%E2%80%B30%E2%80%B4">🙂 Uncommon</a></li>
@@ -207,13 +197,22 @@ the UTXO that contains the ordinal is the current owner of the token.</p></secti
 <li><a href="https://ordinals.com/ordinal/satoshi">😎 Exotic</a></li>
 <li><a href="https://ordinals.com/bounties/">🤠 Bounties</a></li>
 </ul></section>
-        <section id=13><h1>Ordinal Index</h1>
+        <section id=12><h1>Tokens</h1>
+<p>If you want a token, you can just pick an ordinal to represent your token, and
+use the location of the ordinal to represent ownership.</p>
+<p>The person who controls the private key that corresponds to the public key of
+the UTXO that contains the ordinal is the current owner of the token.</p></section>
+        <section id=13><h1>What else are ordinals good for?</h1>
 <ul>
-<li><a href="http://api.ordinals.com:8000/list/e11d223685e110c5df93d7ae57f63c535ac59d1d65c16de779f23a9166229c7e:0">big</a></li>
-<li><a href="http://api.ordinals.com:8000/list/81bb70199e0c2cf6a32ee0b8079085eb590c311f6e91bb51c14b85846593a76e:1">small</a></li>
-<li><a href="http://api.ordinals.com:8000/list/b40375d8e4f50728c18ed292c2e40ed616797592a2f5587c9f72a23a55973f9e:0">spent</a></li>
+<li>Aesthetics!</li>
+<li>Supporting the fee market!</li>
 </ul></section>
-        <section id=14><h1>What are ordinals not good for?</h1>
+        <section id=14><h1>The Index</h1>
+<ul>
+<li><a href="https://ordinals.com/output/faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:0">faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:0</a></li>
+<li><a href="https://ordinals.com/output/faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:1">faf8a0a8f86855c39b9dc8924a77fc2022a7e2c450a960ad800f77af00c9fc63:1</a></li>
+</ul></section>
+        <section id=15><h1>What are ordinals not good for?</h1>
 <ul>
 <li>Not having to make weird multi-step transactions to avoid hitting the dust
 limit</li>
@@ -221,37 +220,36 @@ limit</li>
 <li>Very high divisibility</li>
 <li>Small databases</li>
 </ul></section>
-        <section id=15><h1>Ordinal NFTs</h1>
+        <section id=16><h1>Ordinal NFTs: The Basic Idea</h1>
 <ol>
-<li>Hash: (ordinal || content hash || public key)</li>
+<li>Hash: (ordinal || content hash)</li>
 <li>Sign</li>
-<li>Append signature, data, and then bech32 encode</li>
-<li>Et voilà: <code>nft1qqz3psl8mvjm9t573n29l8q0phklcdhg65392pv0gpc79tydeujltn5g2h4fsg...</code></li>
+<li>Append pubkey, signature, and content</li>
+<li>Et voilà: <code>736172790a20202020636f6e73656e74732c207065726d697373...</code></li>
 </ol></section>
-        <section id=16><h1>Ordinal NFTs</h1>
+        <section id=17><h1>Ordinal NFTs</h1>
 <ul>
 <li>No on-chain transaction to mint</li>
 <li>Store the NFT wherever</li>
 <li>Anyone who has access to the NFT will know the secret, hidden meaning of the
-ordinal.</li>
+ordinal</li>
 </ul></section>
-        <section id=17><h1>Ordinal NFT Upgrades: Issued by ordinal owner</h1>
+        <section id=18><h1>Ordinal NFT Upgrades: Issued by ordinal owner</h1>
 <ul>
-<li>Currently, anyone can assign an NFT to an ordinal.</li>
-<li>This strikes some people as weird, like digital graffiti.</li>
-<li>In the future, may want to give some special status, like “self-issued” if the NFT is signed with a public key that held the ordinal.</li>
+<li>Anyone can assign an off-chain NFT to an ordinal</li>
+<li>Kind of like digital graffiti</li>
+<li>In the future, may want to give some special status, like “self-issued” if the NFT is signed with a public key that held the ordinal</li>
 </ul></section>
-        <section id=18><h1>Ordinal NFT Upgrades: Timestamping</h1>
+        <section id=19><h1>Ordinal NFT Upgrades: Timestamping</h1>
 <ul>
 <li>Age is of great interest to NFT collectors</li>
 <li>Including a timestamp in an NFT is an easy way to prove the age of an NFT</li>
 </ul></section>
-        <section id=19><h1>Ordinal NFT Upgrades: Publicity</h1>
+        <section id=20><h1>Ordinal NFT Upgrades: Publicity</h1>
 <ul>
 <li>Timestamps prove that an NFT was created before a particular time</li>
 <li>Timestamps <em>don’t</em> prove that there wasn’t anything that was created earlier</li>
 <li>It might be desirable to add a public issuance method, i.e. one where the chain can be scanned for such issuences, and a total ordering to be established over them</li>
-<li>Very reluctant to do this, since this kind of embedding of public data in the Bitcoin blockchain is not very aesthetically pleasing or culturally acceptable to bitcoiners</li>
 </ul></section>
       </body>
 </html>

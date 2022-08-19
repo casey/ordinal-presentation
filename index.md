@@ -3,7 +3,6 @@
 # Today's Agenda
 - Who am I?
 - What are ordinals?
-- What does that have to do with NFTs?
 
 ---
 
@@ -110,19 +109,6 @@ def assign_ordinals(block):
 
 # What are ordinals good for?
 
-If you want a token, you can just pick an ordinal to represent your token, and
-use the location of the ordinal to represent ownership.
-
-The person who controls the private key that corresponds to the public key of
-the UTXO that contains the ordinal is the current owner of the token.
-
----
-
-# What else are ordinals good for?
-
-- Aesthetics!
-- Supporting the fee market!
-
 ---
 
 # Rare and exotic sats
@@ -135,6 +121,23 @@ the UTXO that contains the ordinal is the current owner of the token.
 - [🤯 Mythic](https://ordinals.com/ordinal/0°0′0″0‴)
 - [😎 Exotic](https://ordinals.com/ordinal/satoshi)
 - [🤠 Bounties](https://ordinals.com/bounties/)
+
+---
+
+# Tokens
+
+If you want a token, you can just pick an ordinal to represent your token, and
+use the location of the ordinal to represent ownership.
+
+The person who controls the private key that corresponds to the public key of
+the UTXO that contains the ordinal is the current owner of the token.
+
+---
+
+# What else are ordinals good for?
+
+- Aesthetics!
+- Supporting the fee market!
 
 ---
 
